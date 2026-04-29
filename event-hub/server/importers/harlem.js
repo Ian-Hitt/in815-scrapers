@@ -1,0 +1,33 @@
+export function mapRow(row) {
+  return {
+    event: {
+      title: row.title,
+      start_date: row.startDate,
+      start_time: row.startTime || null,
+      end_date: null,
+      end_time: row.endTime || null,
+      description: row.description || null,
+      venue: row.venue || null,
+      address: row.address || null,
+      city: row.city || null,
+      state: row.state || null,
+      zip: row.zip || null,
+      latitude: null,
+      longitude: null,
+      category: row.sport || null,
+      tags: [row.gender, row.level].filter(Boolean).join("; ") || null,
+      price: null,
+      image_url: null,
+      url: "https://schools.snap.app/harlem/calendar",
+      external_url: null,
+      contact: null,
+      organizer: "Harlem High School",
+      is_online: 0,
+      recurring: 0,
+      recurrence_frequency: null,
+      recurrence_end_date: null,
+    },
+    sourceId: row.eventId,
+    sourceUrl: "https://schools.snap.app/harlem/calendar",
+  };
+}

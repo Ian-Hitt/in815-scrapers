@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#121212"/>
+  <rect x="32" y="32" width="448" height="448" rx="72" fill="#1f2937"/>
+  <text x="256" y="225" text-anchor="middle" dominant-baseline="central"
+        font-family="Arial, Helvetica, sans-serif" font-size="160" font-weight="900" fill="#f9fafb" letter-spacing="-4">815</text>
+  <rect x="96" y="280" width="320" height="3" rx="1.5" fill="#60a5fa" opacity="0.5"/>
+  <text x="256" y="340" text-anchor="middle" dominant-baseline="central"
+        font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700" fill="#60a5fa" letter-spacing="2">EVENT</text>
+  <text x="256" y="415" text-anchor="middle" dominant-baseline="central"
+        font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700" fill="#60a5fa" letter-spacing="6">HUB</text>
+</svg>

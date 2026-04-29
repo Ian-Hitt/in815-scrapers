@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Custom dark theme palette ── */
+@theme {
+  /* Surface scale — neutral, based on #121212 */
+  --color-surface-950: #0a0a0a;
+  --color-surface-900: #121212;
+  --color-surface-800: #1e1e1e;
+  --color-surface-700: #2c2c2c;
+  --color-surface-600: #3d3d3d;
+  --color-surface-500: #6b6b6b;
+  --color-surface-400: #9a9a9a;
+  --color-surface-300: #b8b8b8;
+  --color-surface-200: #d4d4d4;
+  --color-surface-100: #ebebeb;
+  --color-surface-50: #f5f5f5;
+
+  /* Accent scale — lime green, based on #a1f381 */
+  --color-accent-950: #0f2b0a;
+  --color-accent-900: #1a4512;
+  --color-accent-800: #275a1e;
+  --color-accent-700: #347428;
+  --color-accent-600: #459833;
+  --color-accent-500: #5cb83e;
+  --color-accent-400: #7dd45c;
+  --color-accent-300: #a1f381;
+  --color-accent-200: #c5f9ad;
+  --color-accent-100: #e2fdd4;
+  --color-accent-50: #f2fee9;
+}
+
+/* Safe area insets for notched phones */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  :root {
+    --sai-top: env(safe-area-inset-top);
+    --sai-bottom: env(safe-area-inset-bottom);
+    --sai-left: env(safe-area-inset-left);
+    --sai-right: env(safe-area-inset-right);
+  }
+}
+
+/* Bottom nav height token — used for content padding */
+:root {
+  --bottom-nav-h: 0px;
+}
+
+/* Smooth momentum scrolling on iOS */
+.overflow-y-auto,
+.overflow-x-auto {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Touch action hints — prevent 300ms tap delay */
+button, a, [role="button"] {
+  touch-action: manipulation;
+}
+
+/* Bottom sheet drag handle */
+.drag-handle {
+  width: 2rem;
+  height: 0.25rem;
+  border-radius: 9999px;
+  margin: 0.5rem auto;
+}

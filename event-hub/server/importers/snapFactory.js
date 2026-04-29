@@ -1,0 +1,47 @@
+/**
+ * Factory for SNAP.app school athletics importers.
+ * Each school importer just calls makeSnapMapRow() with its config.
+ *
+ * Usage:
+ *   import { makeSnapMapRow } from "./snapFactory.js";
+ *   export const mapRow = makeSnapMapRow({
+ *     organizer: "Guilford High School",
+ *     calendarUrl: "https://schools.snap.app/GuilfordHS/calendar",
+ *   });
+ */
+
+export function makeSnapMapRow({ organizer, calendarUrl }) {
+  return function mapRow(row) {
+    return {
+      event: {
+        title: row.title,
+        start_date: row.startDate,
+        start_time: row.startTime || null,
+        end_date: null,
+        end_time: row.endTime || null,
+        description: row.description || null,
+        venue: row.venue || null,
+        address: row.address || null,
+        city: row.city || null,
+        state: row.state || null,
+        zip: row.zip || null,
+        latitude: null,
+        longitude: null,
+        category: row.sport || null,
+        tags: [row.gender, row.level].filter(Boolean).join("; ") || null,
+        price: null,
+        image_url: null,
+        url: calendarUrl,
+        external_url: null,
+        contact: null,
+        organizer,
+        is_online: 0,
+        recurring: 0,
+        recurrence_frequency: null,
+        recurrence_end_date: null,
+      },
+      sourceId: row.eventId,
+      sourceUrl: calendarUrl,
+    };
+  };
+}

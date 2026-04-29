@@ -1,0 +1,23 @@
+{
+  "name": "in815-scrapers",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "event-hub"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=event-hub",
+    "build": "npm run build --workspace=event-hub",
+    "start": "npm run start --workspace=event-hub",
+    "scrape:rpd": "node scrapers/rpd.js",
+    "scrape:gorockford": "node scrapers/gorockford.js",
+    "scrape:eventbrite": "node scrapers/eventbrite.js",
+    "scrape:rpl": "node scrapers/rpl.js",
+    "scrape:harlem": "node scrapers/harlem.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.90.0",
+    "puppeteer": "^24.4.0"
+  }
+}
